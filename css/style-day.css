@@ -1,4 +1,4 @@
-button{
+button {
   font-size: 20px;
 }
 body {
@@ -37,7 +37,7 @@ body {
   line-height: 90%;
   color: #e9c597;
 }
-.card{
+.card {
   margin-bottom: 20px;
   font-size: 20px;
 }
@@ -94,10 +94,11 @@ body {
   color: #f7f7f7;
 }
 .body-card {
-  min-height: 101px;
+  min-height: 202px;
   background-color: #54bab9;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
   padding-bottom: 12px;
+  
 }
 .task-content {
   display: flex;
@@ -115,16 +116,19 @@ body {
   color: #fff;
   padding: 0 10px 0;
 }
-.content-btn__delite{
-    margin-right: 10px;
-    background-color: transparent;
-    padding: 0;
-    border: none;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+.content-btn{
+  display: flex;
 }
-.content-btn__completed{
+.content-btn__delite {
+  margin-right: 25px;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.content-btn__completed {
   color: #fff;
   font-weight: 400;
   line-height: 27px;
@@ -136,82 +140,161 @@ body {
   transition: all ease-in-out 0.2s;
 }
 
-.content-btn__completed:hover, .btn-adaptive:hover{
+.content-btn__completed:hover,
+.btn-adaptive:hover {
   background-color: #39843b;
   color: #f7f7f7;
 }
 
-.body-card__footer{
+.body-card__footer {
   text-align: center;
-  margin-top: 12px;
+  background-color: #54bab9;
+  border-radius: 0 0 10px 10px;
+  padding-bottom: 12px;
 }
-.link-GH{
+.link-GH {
   text-decoration: none;
   color: #146161;
   font-size: 17px;
   transition: all ease-in-out 0.2s;
 }
-.link-GH:hover{
+.link-GH:hover {
   color: #f7f7f7;
 }
-
-@media(max-width:715px){
-  .card{
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: rgba(0, 0, 0, 50%);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+}
+.modal-box {
+  min-width: 423px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.modal-box__inner {
+  padding: 22px 40px 26px;
+  background-color: #54bab9;
+  border-radius: 10px;
+}
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  margin-bottom: 18px;
+}
+.modal-input {
+  margin-bottom: 35px;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+}
+.modal-input::placeholder {
+  padding-left: 10px;
+  font-size: 20px;
+  color: #858585;
+}
+input[type="text"] {
+  color: #858585;
+  font-size: 20px;
+  padding-left: 10px;
+}
+.modal-btn {
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  background-color: #1d8a8a;
+  color: #fff;
+  height: 40px;
+  font-weight: 700;
+  padding: 10px;
+  display: block;
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+}
+.modal-btn:hover {
+  color: #cecece;
+  background-color: #146161;
+}
+@media (max-width: 715px) {
+  .card {
     font-size: 16px;
   }
-  button{
+  button {
     font-size: 16px;
   }
-  .link-GH{
+  .link-GH {
     font-size: 16px;
   }
 }
-@media(max-width:615px){
-  .task-content{
+@media (max-width: 615px) {
+  .task-content {
     padding: 20px;
   }
 }
-@media(max-width:535px){
-  .counter-task{
+@media (max-width: 535px) {
+  .counter-task {
     display: none;
   }
 }
-@media(max-width:450px){
-  .btn{
+@media (max-width: 450px) {
+  .btn {
     margin: 30px;
   }
-  .info{
+  .info {
     margin-top: 50px;
     margin-bottom: 50px;
   }
-  .info-title{
+  .info-title {
     font-size: 25px;
   }
-  .header-card{
+  .header-card {
     justify-content: center;
   }
-  .clear-task{
+  .clear-task {
     display: none;
   }
-  button{
-    font-size: 13px;
+  button {
+    font-size: 15px;
   }
-  .card{
-    font-size: 13px;
+  .card {
+    font-size: 15px;
   }
-  .task-content{
+  .task-content {
     padding: 20px;
   }
-  .task-content__text{
+  .task-content__text {
     line-height: 15px;
   }
+  .modal-box {
+    min-width: 350px;
+  }
 }
-@media(max-width:350px){
-  .info{
+@media (max-width: 350px) {
+  .info {
     margin-top: 30px;
     margin-bottom: 15px;
   }
-  .btn{
+  .btn {
     margin: 10px;
+  }
+  .modal-box {
+    min-width: 300px;
   }
 }
