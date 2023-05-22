@@ -119,7 +119,7 @@ body {
 .content-btn{
   display: flex;
 }
-.content-btn__delite {
+.content-btn__delete {
   margin-right: 25px;
   background-color: transparent;
   padding: 0;
@@ -127,6 +127,9 @@ body {
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+.content-btn__delete img{
+  pointer-events: none;
 }
 .content-btn__completed {
   color: #fff;
