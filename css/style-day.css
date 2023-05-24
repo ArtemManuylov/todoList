@@ -98,7 +98,6 @@ body {
   background-color: #54bab9;
   border-radius: 10px 10px 0 0;
   padding-bottom: 12px;
-  
 }
 .task-content {
   display: flex;
@@ -116,8 +115,24 @@ body {
   color: #fff;
   padding: 0 10px 0;
 }
-.content-btn{
+.content-btn {
   display: flex;
+}
+.no-completed {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+.completed {
+  width: 30px;
+  height: 30px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  background-image: url(/images/vector.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .content-btn__delete {
   margin-right: 25px;
@@ -128,7 +143,7 @@ body {
   align-items: center;
   cursor: pointer;
 }
-.content-btn__delete img{
+.content-btn__delete img {
   pointer-events: none;
 }
 .content-btn__completed {

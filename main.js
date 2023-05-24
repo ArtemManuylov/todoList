@@ -4,6 +4,7 @@ const btnImg = document.querySelector('.btn-img');
 const creatTask = document.querySelector('.creat-task');
 const modal = document.querySelector('.modal');
 const modalInput = document.querySelector('.modal-form');
+const btnClear = document.querySelector('.clear-task');
 //смена темы 
 btnImg.addEventListener('click', change);
 
@@ -25,7 +26,12 @@ modalInput.addEventListener('submit', addTask);
 
 
 //удаление задач в список
-bodyCard.addEventListener('click', deleteTask)
+bodyCard.addEventListener('click', deleteTask);
+
+//выполнение задачи
+bodyCard.addEventListener('click', completedTask);
+
+
 
 //функции
 function change(){
@@ -53,8 +59,9 @@ function closedModalForm(event){
 function addTask(event){
     event.preventDefault()
     let inputText = inputForm.value.trim();
+
     let taskHtml = `<div class="task-content">
-    <img class="task-content__completed" id="ellipse" src="images/Ellipse.png" alt="Ellipse">
+    <div id ="no-completed" class="no-completed"></div>
     <p class="task-content__text">${inputText}</p>
     <div class="content-btn">
         <button data-action="delete" class="content-btn__delete">
@@ -69,11 +76,31 @@ function addTask(event){
     inputForm.value = '';
     // счетчик задач 
     const counterTask = document.querySelector('.counter-task');
+    
     counterTask.textContent = bodyCard.children.length + " " + "задач";
+
+    //отчистить задачи 
+    btnClear.addEventListener('click', ()=>{
+        let taskContent = document.querySelector('.task-content');
+        taskContent.remove()
+    });
+
+
 };
 function deleteTask(event){
     if(event.target.dataset.action === "delete"){
     const parenNode =    event.target.closest('.task-content');
     parenNode.remove()
     };
+};
+function completedTask(event){ 
+
+   
+
+    if(event.target.dataset.action === "Done"){
+        let node = event.target.closest('.task-content');
+        let completed = node.querySelector('#no-completed');
+        completed.classList.toggle('completed');
+        
+    }
 };
