@@ -5,6 +5,8 @@ const creatTask = document.querySelector('.creat-task');
 const modal = document.querySelector('.modal');
 const modalInput = document.querySelector('.modal-form');
 const btnClear = document.querySelector('.clear-task');
+let counter = 0;
+
 //смена темы 
 btnImg.addEventListener('click', change);
 
@@ -16,7 +18,7 @@ creatTask.addEventListener('click', callingModal);
 //закрытие окна через кнопку в форме или enter
 modalInput.addEventListener('submit', closedMaodal);
 
-//закрытие окна чере окно
+//закрытие окна через окно
 window.addEventListener('click', closedModalForm);
 
 
@@ -61,7 +63,9 @@ function addTask(event){
     let inputText = inputForm.value.trim();
 
     let taskHtml = `<div class="task-content">
+    <div class="box">
     <div id ="no-completed" class="no-completed"></div>
+    </div>
     <p class="task-content__text">${inputText}</p>
     <div class="content-btn">
         <button data-action="delete" class="content-btn__delete">
@@ -74,23 +78,22 @@ function addTask(event){
     bodyCard.insertAdjacentHTML('beforeend', taskHtml);
     };
     inputForm.value = '';
-    // счетчик задач 
-    const counterTask = document.querySelector('.counter-task');
+ 
+    countPlus();
     
-    counterTask.textContent = bodyCard.children.length + " " + "задач";
-
     //отчистить задачи 
     btnClear.addEventListener('click', ()=>{
         let taskContent = document.querySelector('.task-content');
+        
         taskContent.remove()
-    });
-
-
+        countMinus();
+    })
 };
 function deleteTask(event){
     if(event.target.dataset.action === "delete"){
     const parenNode =    event.target.closest('.task-content');
     parenNode.remove()
+    countMinus();
     };
 };
 function completedTask(event){ 
@@ -104,3 +107,19 @@ function completedTask(event){
         
     }
 };
+function countPlus(){
+    const counterTask = document.querySelector('.counter-task');
+    for(let i = 0; i < 1; i ++ ){
+        counter = bodyCard.children.length;
+        counterTask.textContent = counter + " " + "задач";
+        console.log(counter)
+    };
+}
+function countMinus(){
+    const counterTask = document.querySelector('.counter-task');
+    for(let i = 0; i >= 0; i -- ){
+        counter = bodyCard.children.length;
+        counterTask.textContent = counter + " " + "задач";
+        console.log(counter)
+    };
+}

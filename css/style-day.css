@@ -110,6 +110,8 @@ body {
   margin: 5px;
 }
 .task-content__text {
+  word-break: break-all;
+  min-width: 80px;
   font-weight: 400;
   line-height: 27px;
   color: #fff;
@@ -145,6 +147,9 @@ body {
 }
 .content-btn__delete img {
   pointer-events: none;
+}
+.box{
+  width: 30px;
 }
 .content-btn__completed {
   color: #fff;
@@ -273,7 +278,10 @@ input[type="text"] {
 }
 @media (max-width: 450px) {
   .btn {
-    margin: 30px;
+    margin: 20px;
+  }
+  .content-btn__delete{
+    margin-right: 10px;
   }
   .info {
     margin-top: 50px;
@@ -295,7 +303,7 @@ input[type="text"] {
     font-size: 15px;
   }
   .task-content {
-    padding: 20px;
+    padding: 10px;
   }
   .task-content__text {
     line-height: 15px;
