@@ -23,6 +23,30 @@ body {
   margin: 50px;
   padding: 0;
   position: absolute;
+  animation: fall 0.5s linear;
+}
+.btn-img{
+  animation-name: ratation;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes fall{
+  0%{
+    transform: translateY(-200%);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+}
+
+@keyframes ratation{
+  0%{
+    transform: rotate(0deg)
+  }
+  100%{
+    transform: rotate(360deg);
+  }
 }
 .info {
   display: flex;
